@@ -1,0 +1,33 @@
+@import "materialize-css/sass/materialize";
+
+.home {
+    width: 100%;
+
+
+
+    &--cta {
+        background: #ff9800;
+        color: white;
+        text-align: center;
+        padding: 60px 20px;
+
+        div {
+            h2 {
+                font-size: 2rem;
+                font-weight: bold;
+            }
+
+
+
+            a {
+                margin-top: 20px;
+                background-color: white;
+                color: #ff9800;
+                font-size: 1.2rem;
+                padding: 12px 24px;
+                border-radius: 8px;
+                text-transform: uppercase;
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "site_contents",
+  "info": {
+    "singularName": "site-content",
+    "pluralName": "site-contents",
+    "displayName": "Site Content",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "features_title": {
+      "type": "string"
+    },
+    "features_icon": {
+      "type": "string"
+    },
+    "features_desc": {
+      "type": "text"
+    }
+  }
+}

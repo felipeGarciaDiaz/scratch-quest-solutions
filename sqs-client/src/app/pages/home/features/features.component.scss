@@ -1,0 +1,140 @@
+@import '../../../../styles.scss';
+
+
+
+.home--features {
+    padding: 60px 20px;
+    text-align: center;
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+
+        h2 {
+            font-size: 6vmin;
+            font-weight: bold;
+            color: $features-header-primary-color;
+            --shadow-color: var(--features-header-primary-shadow-color);
+            margin-bottom: 30px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap; // Allows items to wrap
+            justify-content: center;
+            gap: 30px; // Spacing between cards
+
+            .home--features--card {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                background: $features-card-background-color;
+                border-radius: 8px;
+                padding: 20px;
+                width: 100%; // Default full width for responsiveness
+                max-width: 300px; // Ensures uniform size on larger viewports
+                height: 300px; // Maintains a square shape
+                text-align: center;
+                transition: transform 0.3s ease-in-out;
+
+                &:hover {
+                    transform: scale(1.05);
+                }
+
+                i {
+                    font-size: 3rem;
+                    color: $features-icon-color;
+                }
+
+                h5 {
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                    margin-top: 10px;
+                    color: $features-header-color;
+                    text-shadow: none;
+                    font-family: 'Roboto', sans-serif;
+                }
+
+                p {
+                    font-size: 1.2rem;
+                    font-weight: 300;
+                    margin-top: 10px;
+                    color: $text-primary-color;
+                }
+            }
+        }
+    }
+}
+
+// Responsive adjustments: When cards cannot sit side-by-side, stack them as a column.
+// Also, when in column layout, increase the card dimensions for better visibility.
+@media (max-width: 768px) {
+    .home--features .row {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .home--features--card {
+            padding: 30px; // Increase padding for a larger look
+            max-width: 500px; // Allow cards to be wider
+            height: auto; // Adjust height based on content (or use a fixed larger height if needed, e.g., height: 400px;)
+        }
+    }
+}
+
+// ------------------------------------
+// Additional Modern Animations & Effects
+// ------------------------------------
+
+// Keyframe animations for fade-in and upward slide
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 30px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+// Apply a fadeIn animation to the entire features section for a smooth entrance
+.home--features {
+    animation: fadeIn 1.5s ease-out both;
+}
+
+// Staggered fadeInUp for each feature card
+.home--features--card {
+    opacity: 0; // Ensure initial state is hidden for animation
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+// Delay the animation for each card to create a cascading effect
+.home--features--card:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.home--features--card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.home--features--card:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+// Enhance hover state with a subtle shadow for a modern feel
+.home--features--card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}

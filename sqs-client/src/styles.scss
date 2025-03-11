@@ -1,0 +1,142 @@
+/* You can add global styles to this file, and also import other style files */
+@use "materialize-css/sass/materialize";
+
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+$body-background-color: #F6E8EA;
+$hero-background-color-left: #22181C;
+$hero-background-color-right: #261b20;
+$about-background-color: #312F2F;
+$contact-background-color: #ff9800;
+
+$header-primary-color: #EF626C;
+$header-primary-shadow-color: #A14249;
+$header-secondary-color: #FFD586;
+$header-secondary-shadow-color: #947A49;
+
+$hero-subtitle-color: #ffce0b;
+$hero-subtitle-shadow-color: #7a5c2e;
+
+
+$about-header-primary-color: #EF626C;
+$about-header-primary-shadow-color: #A14249;
+
+$features-header-primary-color: #FFA82E;
+$features-header-primary-shadow-color: #C5852B;
+
+$features-card-background-color: #22181C;
+$features-icon-color: #ff9800;
+$features-header-color: #ff6767;
+
+$contact-header-primary-color: #ffffff;
+$contact-header-primary-shadow-color: #aeaeae;
+
+$text-primary-color: #ffffff;
+$text-secondary-color: #000000;
+
+$submit-button-color: #432c2c;
+$submit-button-text-color: #ffffff;
+$input-border-color: #432c2c;
+$input-focus-border-color: #835757;
+
+html,
+body {
+    height: 100%;
+    background-color: $body-background-color;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+div {
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+button,
+.btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Luckiest Guy", serif;
+    color: var(--text-color, currentColor);
+    text-shadow: 0.1em 0.1em 0 var(--shadow-color, currentColor);
+    font-weight: bold;
+
+
+    b {
+        color: inherit;
+        text-shadow: 0.1em 0.1em 0 var(--b-shadow-color, var(--shadow-color, currentColor));
+    }
+
+
+    &::after {
+        content: attr(data-text);
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        filter: brightness(0.75);
+        color: inhert;
+        text-shadow: inherit;
+    }
+
+
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: #444;
+}
+
+
+
+.hidden {
+    display: none;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.full-width {
+    width: 100%;
+}
+
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+:root {
+    --hero-subtitle-shadow-color: #{$hero-subtitle-shadow-color};
+
+    --header-primary-shadow-color: #{$header-primary-shadow-color};
+
+    --header-secondary-shadow-color: #{$header-secondary-shadow-color};
+
+    --about-header-primary-shadow-color: #{$about-header-primary-shadow-color};
+
+    --features-header-primary-shadow-color: #{$features-header-primary-shadow-color};
+
+    --contact-header-primary-shadow-color: #{$contact-header-primary-shadow-color};
+}

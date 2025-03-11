@@ -1,0 +1,21 @@
+<div class="modal-backdrop" *ngIf="isVisible">
+  <div class="modal-container">
+    <div class="modal-header">
+      <h2>{{ title }}</h2>
+    </div>
+    <div class="modal-body">
+      <!-- If errorList exists, display errors as a list -->
+      <div *ngIf="errorList && errorList.length; else textContent">
+        <ul>
+          <li *ngFor="let error of errorList">{{ error }}</li>
+        </ul>
+      </div>
+      <ng-template #textContent>
+        <p>{{ message }}</p>
+      </ng-template>
+    </div>
+    <div class="modal-footer">
+      <button (click)="onClose()">{{ closeButtonText }}</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<section class="home--features">
+    <div class="container">
+        <h2>Why Choose Us?</h2>
+        <div class="row">
+            <div *ngFor="let feature of features" class="col home--features--card">
+                <i class="material-icons">{{ feature.features_icon }}</i>
+                <h5>{{ feature.features_title }}</h5>
+                <p>{{ feature.features_desc }}</p>
+            </div>
+        </div>
+    </div>
+</section>

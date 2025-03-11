@@ -1,0 +1,151 @@
+@import '../../../../styles.scss';
+
+.home--hero {
+    background: linear-gradient(to right, $hero-background-color-left, $hero-background-color-right);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 65vh;
+    overflow: hidden;
+    position: relative;
+
+    app-clipped-shape-vector {
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        height: 300px;
+        z-index: 0; // Ensure it's behind text
+        opacity: 0.5;
+
+    }
+
+    div {
+        z-index: 1;
+
+        h1 {
+            b {
+                color: $header-primary-color;
+                --b-shadow-color: var(--header-primary-shadow-color);
+            }
+
+            letter-spacing: 3px;
+            color: $header-secondary-color;
+            --shadow-color: var(--header-secondary-shadow-color);
+            font-size: 7vmin;
+            font-weight: bold;
+        }
+
+        h4 {
+            font-size: 4vmin;
+            letter-spacing: 2px;
+            color: $hero-subtitle-color;
+            --shadow-color: var(--hero-subtitle-shadow-color);
+            font-weight: 300;
+        }
+
+        button {
+            display: inline-block;
+            background-color: goldenrod;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            font-size: 2vmin;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+
+            &:hover {
+                background-color: darkgoldenrod;
+                transform: scale(1.1);
+            }
+
+            &:active {
+                background-color: goldenrod;
+                transform: scale(0.95);
+            }
+        }
+
+    }
+}
+
+// ------------------------------------
+// Additional Complex and Eye-Catching Animations
+// ------------------------------------
+
+// Animate background gradient shifting
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+// Fade and slide in hero text
+@keyframes heroTextFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// Pulsing effect for the clipped shape vector
+@keyframes vectorPulse {
+    0% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0.3;
+    }
+}
+
+// Apply the animations without altering the existing structure
+.home--hero {
+    // Ensure the gradient covers a larger area and animates slowly
+    background-size: 200% 200%;
+    animation: gradientShift 10s ease infinite;
+
+    // Animate the hero text container
+    div {
+        animation: heroTextFadeIn 1.5s ease-out both;
+    }
+
+    // Apply the pulsing animation to the vector element
+    app-clipped-shape-vector {
+        animation: vectorPulse 3s ease-in-out infinite;
+    }
+}
+
+
+
+// Refine the button styling to ensure text remains centered and contained
+.home--hero div button {
+    height: 55px;
+    font-size: 1.5vmin;
+}

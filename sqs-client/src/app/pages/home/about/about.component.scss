@@ -1,0 +1,26 @@
+@import '../../../../styles.scss';
+
+.home--about {
+    background: $about-background-color;
+    padding: 25px 25px 100px 25px;
+    text-align: center;
+
+    div {
+        h2 {
+            color: $about-header-primary-color;
+            --shadow-color: var(--about-header-primary-shadow-color);
+            font-size: 6vmin;
+            font-weight: bold;
+        }
+
+        p {
+            color: $text-primary-color;
+            font-size: 1.2rem;
+            max-width: 1000px;
+            ;
+            letter-spacing: 1px;
+            font-weight: 300;
+            margin: 0 auto;
+        }
+    }
+}

@@ -1,0 +1,60 @@
+<section class="home--contact">
+  <div class="container">
+    <h2>Contact Us</h2>
+    <div class="home--contact--form">
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+
+        <!-- Name and Phone Number (Side by Side) -->
+        <div class="input-group">
+          <div class="input-container">
+            <label for="name">Name</label>
+            <input id="name" formControlName="name" type="text" required autocomplete="name" placeholder=" ">
+            <div class="error-alert" *ngIf="getErrorMessages('name').length">
+              <small class="error-message">{{ getErrorMessages('name')[0] }}</small>
+            </div>
+          </div>
+          <div class="input-container">
+            <label for="phone">Phone Number</label>
+            <input id="phone" formControlName="phone" type="tel" required autocomplete="tel" placeholder=" ">
+            <div class="error-alert" *ngIf="getErrorMessages('phone').length">
+              <small class="error-message">{{ getErrorMessages('phone')[0] }}</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Email (Full Width) -->
+        <div class="input-container email-input">
+          <label for="email">Email</label>
+          <input id="email" formControlName="email" type="email" required autocomplete="email" placeholder=" ">
+          <div class="error-alert" *ngIf="getErrorMessages('email').length">
+            <small class="error-message">{{ getErrorMessages('email')[0] }}</small>
+          </div>
+        </div>
+
+        <!-- Message (Full Width) -->
+        <div class="input-container message-input">
+          <label for="message">Message</label>
+          <textarea id="message" formControlName="message" required placeholder=" "></textarea>
+          <div class="error-alert" *ngIf="getErrorMessages('message').length">
+            <small class="error-message">{{ getErrorMessages('message')[0] }}</small>
+          </div>
+        </div>
+
+        <!-- Submit Button (Aligned Right) -->
+        <div class="button-container">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Existing Error Modal (unchanged) -->
+<app-modal [isVisible]="showErrorModal" title="Form Errors" [errorList]="errorModalMessage" closeButtonText="Close"
+  (close)="onCloseErrorModal()">
+</app-modal>
+
+<!-- Success Modal -->
+<app-modal [isVisible]="showSuccessModal" title="Message Sent Successfully!" [errorList]="successModalMessage"
+  closeButtonText="Close" (close)="onCloseSuccessModal()" class="success-modal">
+</app-modal>

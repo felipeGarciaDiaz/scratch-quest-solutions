@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "site_subtitles",
+  "info": {
+    "singularName": "site-subtitle",
+    "pluralName": "site-subtitles",
+    "displayName": "Site Content",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "About": {
+      "type": "text"
+    },
+    "subtitle_html": {
+      "type": "blocks"
+    },
+    "colored_title": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}
